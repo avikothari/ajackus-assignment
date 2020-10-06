@@ -69,7 +69,6 @@ export class SignupComponent implements OnInit {
       this.error_text = error.error['message']
     })
 
-
   }
 
 
