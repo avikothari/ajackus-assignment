@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'SF Compact Bold';
+    src: url(./assets/fonts/SF-Compact-Display-Bold.otf);
+}
+
+@font-face {
+    font-family: 'SF Compact Regular';
+    src: url(./assets/fonts/SF-Compact-Display-Regular.otf);
+}
+
+button, input {
+    outline: 0 !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.error-text {
+    color: #e50019;
+    font-size: 14px;
+    text-align: left;
+}

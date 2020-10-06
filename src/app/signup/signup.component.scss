@@ -1,0 +1,70 @@
+@mixin for_size($size) {
+    @if $size == phone {
+        @media only screen and (max-width: 767px) and (min-width: 320px) {
+            @content;
+        }
+    } @else if $size == ipad {
+        @media only screen and (max-width: 991px) and (min-width: 768px) {
+            @content;
+        }
+    }
+}
+
+.signup-container{
+    margin: 10% 25%;
+
+    @include for_size(phone){
+        margin: 5%;
+    }
+}
+
+.brand_text{
+    font-size: 24px;
+    color:#e22c40;
+    font-family: 'SF Compact Bold';
+}
+
+.sign-in{
+    padding: 10px 50px;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: #e50019;
+    border: 2px solid #e50019;
+    font-weight: 500;
+}
+
+.signup-fields{
+    padding: 0 15%;
+    margin: 2% 0;
+
+    &_label{
+        text-transform: uppercase;
+        font-size: 10px;
+        margin-bottom: 2px;
+        color: #8f8f8f;
+        font-weight: 600;
+    }
+
+    &_input{
+        width: 100%;
+        padding: 10px 10px ;
+
+        &:disabled{
+            background-color: #484848;
+            color:#fff
+        }
+    }
+
+    @include for_size(phone){
+        padding: 0 10%;
+    }
+}
+
+.note_text{
+    padding: 0 15%;
+
+    @include for_size(phone){
+        padding: 0 5%;
+    }
+
+}

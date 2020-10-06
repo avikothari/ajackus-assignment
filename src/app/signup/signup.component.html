@@ -1,0 +1,59 @@
+<div class="signup-container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-12 text-center">
+            <span class="brand_text">Q</span>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12 text-center mt-2 mb-4 note_text">
+            Please confirm or edit your contact information,
+            so that we can notify you when you are approved for our
+            BETA.
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-12">
+            <form class="row" [formGroup]="signInForm" (ngSubmit)="signUp()">
+                <div class="col-lg-12 col-md-12 col-12 mb-2">
+                    <hr>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-12 mt-2">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-12 signup-fields">
+                            <div class="signup-fields_label">name</div>
+                            <input type="text" formControlName="name" class="signup-fields_input">
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-12 signup-fields">
+                            <div class="signup-fields_label">email</div>
+                            <input type="text" formControlName="email" class="signup-fields_input">
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-12 signup-fields">
+                            <div class="signup-fields_label">phone number</div>
+                            <input type="text" formControlName="phone_number" (keypress)="checkChar($event)" maxlength="10" minlength="10" class="signup-fields_input" placeholder="Type a phone number">
+                            <div class="error-text" *ngIf="submitted || formControls.phone_number.touched">
+                                <span *ngIf="formControls.phone_number.hasError('required')">Please enter your phone number</span>
+                                <span *ngIf="formControls.phone_number.hasError('pattern')">Please enter a valid phone number</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-12 col-md-12 col-12 mt-2">
+                    <div class="error-text text-center" style="font-size:16px">{{error_text ? error_text : ''}}</div>
+                    <hr>
+                </div>
+
+
+                <div class="col-lg-12 col-md-12 col-12 text-center mt-4 ">
+                    <button type="submit" class="sign-in">sign up</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
